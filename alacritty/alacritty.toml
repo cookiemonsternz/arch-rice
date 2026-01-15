@@ -1,0 +1,24 @@
+[window]
+decorations="None"
+padding = { x = 8, y = 8 }
+opacity = 0.7
+# Does not work on Niri yet
+# blur = true
+
+[font]
+normal = { family = "JetBrainsMono NF", style = "Regular"}
+
+[colors.primary]
+# Text
+foreground = "#ffffff"
+background = "#232136"
+
+[colors]
+cursor = { text = "#232136", cursor = "#eb6f92"}
+
+[cursor]
+style = { shape = "Underline" }
+blink_interval = 600
+
+[terminal]
+shell = "/bin/zsh"
