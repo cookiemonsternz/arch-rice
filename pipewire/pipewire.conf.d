@@ -1,0 +1,1 @@
+/home/chris/.config/pipewire/pipewire.conf.d
