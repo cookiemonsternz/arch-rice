@@ -117,7 +117,7 @@ output "ASUSTek COMPUTER INC VG27AQ1A S9LMQS099845" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 10
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -691,5 +691,6 @@ binds {
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-at-startup "alacritty" "fastfetch"
-// spawn-at-startup "dopamine"
+spawn-at-startup "alacritty"
+spawn-at-startup "easyeffects"
+spawn-at-startup "dopamine"
