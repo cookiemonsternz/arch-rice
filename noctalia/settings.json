@@ -20,7 +20,7 @@
         "viewMode": "list"
     },
     "audio": {
-        "cavaFrameRate": 144,
+        "cavaFrameRate": 30,
         "mprisBlacklist": [
         ],
         "preferredPlayer": "dopamine",
@@ -29,9 +29,9 @@
         "volumeStep": 5
     },
     "bar": {
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 1,
         "capsuleOpacity": 1,
-        "density": "default",
+        "density": "mini",
         "exclusive": true,
         "floating": true,
         "marginHorizontal": 4,
@@ -101,7 +101,7 @@
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
-                    "showVisualizer": false,
+                    "showVisualizer": true,
                     "useFixedWidth": false,
                     "visualizerType": "linear"
                 }
@@ -145,7 +145,7 @@
     },
     "brightness": {
         "brightnessStep": 5,
-        "enableDdcSupport": false,
+        "enableDdcSupport": true,
         "enforceMinimum": true
     },
     "calendar": {
@@ -188,7 +188,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
@@ -368,7 +368,7 @@
         "name": "Dunedin",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
-        "showWeekNumberInCalendar": false,
+        "showWeekNumberInCalendar": true,
         "use12hourFormat": false,
         "useFahrenheit": false,
         "weatherEnabled": true,
@@ -385,11 +385,11 @@
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": false,
+        "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "4000"
+        "nightTemp": "5053"
     },
     "notifications": {
         "backgroundOpacity": 0.75,
@@ -426,6 +426,10 @@
             0,
             1,
             2,
+            null,
+            3,
+            null,
+            null,
             null
         ],
         "location": "top_right",
