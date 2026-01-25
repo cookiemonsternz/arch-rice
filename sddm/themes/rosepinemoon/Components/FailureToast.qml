@@ -1,7 +1,7 @@
-import QtQuick
-import QtQuick.Controls
-import QtQuick.Effects
-import QtQml
+import QtQuick 6
+import QtQuick.Controls 6
+import QtQuick.Effects 6
+import QtQml 6
 
 Rectangle {
     id: failureToast

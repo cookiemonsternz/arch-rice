@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtQuick.Controls
+import QtQuick 6
+import QtQuick.Controls 6
 
 ComboBox {
     id: userSelect
@@ -66,7 +66,7 @@ ComboBox {
     popup: Popup {
         y: userSelect.height - 1
         width: userSelect.width
-        height: Math.min(userSelect.implicitHeight, userSelect.Window.height - topMargin - bottomMargin)
+        // height: Math.min(userSelect.implicitHeight, userSelect.Window.height - topMargin - bottomMargin)
         padding: 1
 
         contentItem: ListView {

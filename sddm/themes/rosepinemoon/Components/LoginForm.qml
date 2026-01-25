@@ -1,7 +1,7 @@
-import QtQuick
-import QtQuick.Controls
-import QtQuick.Effects
-import SddmComponents 2.0 as SDDM
+import QtQuick 6
+import QtQuick.Controls 6
+import QtQuick.Effects 6
+// import SddmComponents 6 as SDDM
 
 Rectangle {
     id: loginForm
@@ -51,17 +51,22 @@ Rectangle {
 
         verticalAlignment: TextInput.AlignVCenter
 
-        font.pointSize: height / 3
+        font.pointSize: height
         font.family: fontLoaderBold.name
 
         color: config.LoginTextColor
 
         cursorDelegate: Rectangle {
             id: cursor
-            width: 2 // make it a bit thicker
+            width: 2
             height: parent.height / 2
             anchors.verticalCenter: parent.verticalCenter
             color: config.LoginTextColor
+
+            // Qml normally overwrites cursor delegate height
+            // so this chucks it back to what we want whenever
+            // it tries to change it
+            onHeightChanged: height = parent.height / 2
 
             states: [
                 State {
@@ -104,9 +109,9 @@ Rectangle {
         onAccepted: {
             if (config.boolValue("DebugMode")) {
                 sddm.loginFailed()
-            } else {
-                textInput.login()
-            }
+            } 
+            
+            textInput.login()
         }
     }
 

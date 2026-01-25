@@ -1,9 +1,9 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import SddmComponents 2.0
-import QtMultimedia
-import QtQuick.Effects
-import QtQuick.Controls.Fusion
+import QtQuick 6
+import QtQuick.Controls 6
+// import SddmComponents 6
+import QtMultimedia 6
+import QtQuick.Effects 6
+import QtQuick.Controls.Fusion 6
 
 import "Components"
 
@@ -141,7 +141,7 @@ Pane {
 
     Rectangle {
         id: loginBar
-        width: parent.width / 3
+        width: parent.width / 2.5
         height: parent.height / 11
 
         anchors.bottom: parent.bottom

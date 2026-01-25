@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtQuick.Controls
+import QtQuick 6
+import QtQuick.Controls 6
 
 ComboBox {
     id: sessionSelect
@@ -57,7 +57,7 @@ ComboBox {
     popup: Popup {
         y: sessionSelect.height - 1
         width: sessionSelect.width
-        height: Math.min(sessionSelect.implicitHeight, sessionSelect.Window.height - topMargin - bottomMargin)
+        // height: sessionSelect.height
         padding: 1
 
         contentItem: ListView {

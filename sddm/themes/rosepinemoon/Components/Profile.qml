@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtQuick.Effects
+import QtQuick 6
+import QtQuick.Effects 6
 
 
 Item {

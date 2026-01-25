@@ -1,24 +1,28 @@
-import QtQuick 2.0
-import QtQuick.Controls
-import QtQuick.Effects
-import SddmComponents 2.0 as SDDM
+import QtQuick 6
+import QtQuick.Controls 6
+import QtQuick.Effects 6
+import QtQuick.Layouts 6
+// import SddmComponents 6 as SDDM
 
-Row {
+RowLayout {
     id: powerButtons
     required property string fontRegular
     required property string fontBold
 
-    property real numElements: 4
-
     spacing: width * 0.02
+    uniformCellSizes: true
     Button {
         id: hibernateButton
 
-        width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
-        height: parent.height
+        visible: sddm.canHibernate || config.boolValue("DebugMode")
+
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        // width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
+        // height: parent.height
 
         text: "Hibernate"
-        font.family: fontBold
+        font.family: fontRegular
         font.pixelSize: height / 4
 
         palette.buttonText: hovered ? config.PowerButtonsTextColorHovered : config.PowerButtonsTextColor
@@ -36,16 +40,16 @@ Row {
             border.width: config.PowerButtonsBorderWidth
         }
 
-        Component.onCompleted: {
-            if (config.boolValue("DebugMode")) {
-                return
-            }
+        // Component.onCompleted: {
+        //     if (config.boolValue("DebugMode")) {
+        //         return
+        //     }
             
-            if (!sddm.canHibernate) {
-                hibernateButton.visible = false
-                powerButtons.numElements -= 1
-            }
-        }
+        //     if (!sddm.canHibernate) {
+        //         hibernateButton.visible = false
+        //         powerButtons.numElements -= 1
+        //     }
+        // }
 
         onClicked: {
             console.log("Hibernating...")
@@ -55,11 +59,15 @@ Row {
     Button {
         id: suspendButton
 
-        width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
-        height: parent.height
+        visible: sddm.canSuspend || config.boolValue("DebugMode")
+
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        // width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
+        // height: parent.height
 
         text: "Suspend"
-        font.family: fontBold
+        font.family: fontRegular
         font.pixelSize: height / 4
 
         palette.buttonText: hovered ? config.PowerButtonsTextColorHovered : config.PowerButtonsTextColor
@@ -77,16 +85,16 @@ Row {
             border.width: config.PowerButtonsBorderWidth
         }
 
-        Component.onCompleted: {
-            if (config.boolValue("DebugMode")) {
-                return
-            }
+        // Component.onCompleted: {
+        //     if (config.boolValue("DebugMode")) {
+        //         return
+        //     }
 
-            if (!sddm.canSuspend) {
-                suspendButton.visible = false
-                powerButtons.numElements -= 1
-            }
-        }
+        //     if (!sddm.canSuspend) {
+        //         suspendButton.visible = false
+        //         powerButtons.numElements -= 1
+        //     }
+        // }
 
         onClicked: {
             console.log("Suspending...")
@@ -96,11 +104,15 @@ Row {
     Button {
         id: rebootButton
 
-        width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
-        height: parent.height
+        visible: sddm.canReboot || config.boolValue("DebugMode")
+
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        // width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
+        // height: parent.height
 
         text: "Reboot"
-        font.family: fontBold
+        font.family: fontRegular
         font.pixelSize: height / 4
 
         palette.buttonText: hovered ? config.PowerButtonsTextColorHovered : config.PowerButtonsTextColor
@@ -118,16 +130,16 @@ Row {
             border.width: config.PowerButtonsBorderWidth
         }
 
-        Component.onCompleted: {
-            if (config.boolValue("DebugMode")) {
-                return
-            }
+        // Component.onCompleted: {
+        //     if (config.boolValue("DebugMode")) {
+        //         return
+        //     }
 
-            if (!sddm.canReboot) {
-                rebootButton.visible = false
-                powerButtons.numElements -= 1
-            }
-        }
+        //     if (!sddm.canReboot) {
+        //         rebootButton.visible = false
+        //         powerButtons.numElements -= 1
+        //     }
+        // }
 
         onClicked: {
             console.log("Rebooting...")
@@ -137,11 +149,15 @@ Row {
     Button {
         id: shutdownButton
 
-        width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
-        height: parent.height
+        visible: sddm.canPowerOff || config.boolValue("DebugMode")
+
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        // width: (parent.width / numElements) - (((numElements - 1) * parent.spacing) / numElements)
+        // height: parent.height
 
         text: "Shutdown"
-        font.family: fontBold
+        font.family: fontRegular
         font.pixelSize: height / 4
 
         palette.buttonText: hovered ? config.PowerButtonsTextColorHovered : config.ShutdownTextColor
@@ -159,16 +175,16 @@ Row {
             border.width: config.PowerButtonsBorderWidth
         }
 
-        Component.onCompleted: {
-            if (config.boolValue("DebugMode")) {
-                return
-            }
+        // Component.onCompleted: {
+        //     if (config.boolValue("DebugMode")) {
+        //         return
+        //     }
 
-            if (!sddm.canPowerOff) {
-                shutdownButton.visible = false
-                powerButtons.numElements -= 1
-            }
-        }
+        //     if (!sddm.canPowerOff) {
+        //         shutdownButton.visible = false
+        //         powerButtons.numElements -= 1
+        //     }
+        // }
 
         onClicked: {
             console.log("Shutting down...")

@@ -1,0 +1,3 @@
+For some reason sddm cannot read symlinks of themes, so instead you'll have to do 
+
+sudo cp -r ~/dotfiles/sddm/themes/rosepinemoon /usr/share/sddm/themes/
