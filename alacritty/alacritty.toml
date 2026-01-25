@@ -21,4 +21,4 @@ style = { shape = "Underline" }
 blink_interval = 600
 
 [terminal]
-shell = "/bin/zsh"
+shell = "/bin/fish"

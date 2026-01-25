@@ -73,7 +73,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="25%"
+    focus-follows-mouse max-scroll-amount="75%"
 }
 
 //**************** OUTPUTS ****************//
@@ -269,8 +269,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
+        left 32
+        right 32
         // top 64
         // bottom 64
     }
@@ -383,7 +383,7 @@ window-rule {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
@@ -419,8 +419,8 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Shift+D hotkey-overlay-title="Open Noctalia Launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+K hotkey-overlay-title="Run an Application: code" { spawn "code"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+K hotkey-overlay-title="Run an Application: Code-OSS" { spawn "code"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -452,7 +452,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    // Mod+O repeat=false { toggle-overview; }
     Mod+Tab repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
@@ -671,7 +671,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // Lock screen
-    Mod+L { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+L hotkey-overlay-title=null { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
@@ -691,6 +691,7 @@ binds {
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-sh-at-startup "rclone mount GDrivePasswordRemote:PasswordVault ~/Documents/PasswordVault/ --daemon"
 spawn-at-startup "alacritty"
 spawn-at-startup "easyeffects"
 spawn-at-startup "dopamine"
