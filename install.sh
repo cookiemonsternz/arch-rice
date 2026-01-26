@@ -45,6 +45,7 @@ if [[ $CPC == "Y" || $CPC == "y" ]]; then
     # Some programs can't read symlinks for some reason :( - copy raw files
     cp -r ./sddm/themes/rosepinemoon /usr/share/sddm/themes/
     cp -r ./dopamine/Themes/RosePineMoon.theme ~/.config/dopamine/Themes
+    cp -r ./wallpaper.png ~/Pictures/Wallpapers/
 
     echo "Finished writing conf files"
 fi
