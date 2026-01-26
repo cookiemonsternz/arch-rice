@@ -48,18 +48,9 @@
         "widgets": {
             "center": [
                 {
-                    "characterCount": 2,
-                    "colorizeIcons": false,
-                    "enableScrollWheel": true,
-                    "followFocusedScreen": false,
-                    "groupedBorderOpacity": 1,
-                    "hideUnoccupied": false,
-                    "iconScale": 0.8,
-                    "id": "Workspace",
-                    "labelMode": "index",
-                    "showApplications": false,
-                    "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 1
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:media-controls"
                 }
             ],
             "left": [
@@ -139,6 +130,15 @@
                     "icon": "grid-dots",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "deviceNativePath": "",
+                    "displayMode": "alwaysShow",
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
+                    "warningThreshold": 30
                 }
             ]
         }

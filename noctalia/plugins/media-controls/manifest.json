@@ -1,0 +1,20 @@
+{
+    "id": "media-player",
+    "name": "Media Player",
+    "version": "1.0.0",
+    "minNoctaliaVersion": "3.6.0",
+    "author": "cookiemonsternz",
+    "license": "MIT",
+    "repository": "https://github.com/cookiemonsternz/dotfiles",
+    "description": "Simple media control center for the bar with controls",
+    "entryPoints": {
+        "barWidget": "BarWidget.qml"
+    },
+    "dependencies": {
+        "plugins": []
+    },
+    "metadata": {
+        "defaultSettings": {
+        }
+    }
+}
