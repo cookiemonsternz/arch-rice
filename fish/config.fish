@@ -5,6 +5,6 @@ function fish_greeting
         case "cow"
             fortune cats | cowsay -f $(find /usr/share/cowsay/ -type f | shuf -n 1)
         case "fastfetch"
-            fastfetch
+            hyfetch
     end
 end
