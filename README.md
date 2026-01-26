@@ -8,6 +8,11 @@ install.sh - provided you have niri installed and don't mind gaining a couple ne
 If you want to get themes on most apps, you should be 
 able to find them under Rosé Pine. 
 
+### Screenshots
+
+![Main OS](./MainSS.png)
+![Lock Screen](./LockScreenSS.png)
+
 ### Setup Rundown
 - OS: Arch Linux
 - WM: Niri
